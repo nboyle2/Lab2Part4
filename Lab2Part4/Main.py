@@ -4,6 +4,7 @@ products = {}
 total_amount = 0
 repeat = ''
 while True:
+    name = Invoice().addName(input("Please enter your name : "))
     product = input("What is your product : ")
     unit_price = Invoice().inputNumber("Please enter unit price : ")
     qnt = Invoice().inputNumber("Please enter quantity of product : ")
@@ -16,4 +17,5 @@ while True:
 
 total_amount = Invoice().totalPurePrice(products)
 
+print("\nName: " + name)
 print("Your total pure price is: ", total_amount)

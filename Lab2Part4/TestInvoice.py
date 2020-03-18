@@ -8,6 +8,11 @@ def products():
     return products
 
 @pytest.fixture()
+def name():
+    name = "Bob"
+    return name
+
+@pytest.fixture()
 def invoice():
     invoice = Invoice()
     return invoice
@@ -23,3 +28,7 @@ def test_CanCalculateTotalDiscount(invoice, products):
 def test_CanCalculateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
+
+def test_CanSeeName(invoice, name):
+    invoice.addName(name)
+    assert invoice.addName(name) == "Bob"

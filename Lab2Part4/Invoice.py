@@ -2,12 +2,17 @@ class Invoice:
 
     def __init__(self):
         self.items = {}
+        self.name = ""
 
     def addProduct(self, qnt, price, discount):
         self.items['qnt'] = qnt
         self.items['unit_price'] = price
         self.items['discount'] = discount
         return self.items
+
+    def addName(self, name):
+        self.name = name
+        return name
 
     def totalImpurePrice(self, products):
         total_impure_price = 0
