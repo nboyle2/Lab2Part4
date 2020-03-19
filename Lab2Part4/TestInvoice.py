@@ -32,3 +32,7 @@ def test_CanCalculateTotalPurePrice(invoice, products):
 def test_CanSeeName(invoice, name):
     invoice.addName(name)
     assert invoice.addName(name) == "Bob"
+
+def test_CanCalculateTax(invoice, products):
+    invoice.totalTax(products)
+    assert invoice.totalTax(products) == 72.67555
